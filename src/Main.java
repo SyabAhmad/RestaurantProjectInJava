@@ -24,7 +24,8 @@ class mainControlPanel{
 
 class chickenPolaoPanel extends mainControlPanel{
     void chickenPolaoManager(){
-        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + pkr);
+        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + "PKR");
+
     }
 
 }
@@ -46,9 +47,10 @@ class controlPanel extends mainControlPanel{
         displayItems();
         System.out.println("How can i help you with Sir? : ");
         options = reader.nextByte();
+        chickenPolaoPanel chickenPanel = new chickenPolaoPanel();
         switch (options){
             case 1:
-
+                chickenPanel.chickenPolaoManager();
                 break;
             case 2:
 
