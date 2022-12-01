@@ -7,6 +7,9 @@ class mainControlPanel{
     double chickenTikka = 2000;
     double haleem = 700;
     char sign;
+    String pkr;
+    String doller;
+    String euro;
     byte options;
     Scanner reader = new Scanner(System.in);
     //// to display all items in the manu
@@ -20,6 +23,9 @@ class mainControlPanel{
 }
 
 class chickenPolaoPanel extends mainControlPanel{
+    void chickenPolaoManager(){
+        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + pkr);
+    }
 
 }
 class chickenTikka extends mainControlPanel{
