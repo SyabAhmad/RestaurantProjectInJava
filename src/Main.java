@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class mainControlPanel{
     double mutton = 2500;
     double chickenPolao = 1500;
@@ -6,6 +8,7 @@ class mainControlPanel{
     double haleem = 700;
     char sign;
     byte options;
+    Scanner reader = new Scanner(System.in);
     //// to display all items in the manu
     void displayItems(){
         System.out.println("1: Mutton");
@@ -15,12 +18,7 @@ class mainControlPanel{
         System.out.println("5: Haleem");
     }
 }
-class controlPanel extends mainControlPanel{
-    void controlPanelManager(){
-        displayItems();
-        System.out.println("How can i help you with Sir? : ");
-    }
-}
+
 class chickenPolaoPanel extends mainControlPanel{
 
 }
@@ -37,6 +35,34 @@ class haleem extends mainControlPanel{
 
 }
 
+class controlPanel extends mainControlPanel{
+    void controlPanelManager(){
+        displayItems();
+        System.out.println("How can i help you with Sir? : ");
+        options = reader.nextByte();
+        switch (options){
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+
+            default:
+                System.out.println("Invalid Arguments");
+                break;
+        }
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
