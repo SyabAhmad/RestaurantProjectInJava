@@ -135,16 +135,16 @@ class controlPanel extends mainControlPanel{
                 rice.riceManager();
                 break;
             case 4:
-                chicken.chickenTikkaManager();
-                break;
+                 chicken.chickenTikkaManager();
+                 break;
             case 5:
-                haleem.haleemManager();
-                break;
-
+                  haleem.haleemManager();
+                  break;
             default:
-                System.out.println("Invalid Arguments");
-                break;
-        }
+                   System.out.println("Invalid Arguments");
+                   break;
+                    }
+
     }
 }
 
