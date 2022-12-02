@@ -11,6 +11,7 @@ class mainControlPanel{
     String doller;
     String euro;
     byte options;
+    int quantitiyOfItem;
     Scanner reader = new Scanner(System.in);
     //// to display all items in the manu
     void displayItems(){
@@ -20,26 +21,42 @@ class mainControlPanel{
         System.out.println("4: Chicken Tikka");
         System.out.println("5: Haleem");
     }
+    void quantity(){
+        System.out.println("How Much Do you want it Sir? ");
+        quantitiyOfItem = reader.nextInt();
+    }
 }
 
 class chickenPolaoPanel extends mainControlPanel{
     void chickenPolaoManager(){
         System.out.println("Chicken Polao Selected : Price = " + chickenPolao + "PKR");
-
+        quantity();
     }
 
 }
 class chickenTikka extends mainControlPanel{
-
+    void chickenTikkaManager(){
+        System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + "PKR");
+        quantity();
+    }
 }
 class rice extends mainControlPanel{
-
+    void riceManager(){
+        System.out.println("Rice Selected : Price = " + rice + "PKR");
+        quantity();
+    }
 }
 class mutton extends mainControlPanel{
-
+    void muttonManager(){
+        System.out.println("mutton Selected : Price = " + mutton + "PKR");
+        quantity();
+    }
 }
 class haleem extends mainControlPanel{
-
+    void haleemManager(){
+        System.out.println("Haleem Selected : Price = " + haleem + "PKR");
+        quantity();
+    }
 }
 
 class controlPanel extends mainControlPanel{
@@ -74,6 +91,7 @@ class controlPanel extends mainControlPanel{
 
 public class Main {
     public static void main(String[] args) {
-
+        controlPanel controlManager = new controlPanel();
+        controlManager.controlPanelManager();
     }
 }
