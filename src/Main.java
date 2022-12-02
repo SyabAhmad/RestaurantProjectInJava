@@ -6,10 +6,7 @@ class mainControlPanel{
     double rice = 1800;
     double chickenTikka = 2000;
     double haleem = 700;
-    //char sign;
-    //String pkr;
-    //String doller;
-    //String euro;
+    String sign = "PKR";
     byte options;
     byte optionsForCurrency;
     int quantitiyOfItem;
@@ -51,12 +48,15 @@ class mainControlPanel{
         switch (optionsForCurrency){
             case 1:
                 totalPrice = totalPrice*1;
+                sign = "PKR";
                 break;
             case 2:
                 totalPrice = totalPrice/280;
+                sign = "Euro";
                 break;
             case 3:
                 totalPrice = totalPrice/230;
+                sign = "Dolor";
                 break;
         }
     }
@@ -64,53 +64,53 @@ class mainControlPanel{
 
 class chickenPolaoPanel extends mainControlPanel{
     void chickenPolaoManager(){
-        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + "PKR");
+        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + sign);
         quantity();
         totalPrice = quantitiyOfItem*chickenPolao;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice);
+        System.out.println("Your Bill is: " + totalPrice + sign);
     }
 
 }
 class chickenTikkaPanel extends mainControlPanel{
     void chickenTikkaManager(){
-        System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + "PKR");
+        System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + sign);
         quantity();
         totalPrice = quantitiyOfItem*chickenTikka;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice);
+        System.out.println("Your Bill is: " + totalPrice + sign);
     }
 }
 class ricePanel extends mainControlPanel{
     void riceManager(){
-        System.out.println("Rice Selected : Price = " + rice + "PKR");
+        System.out.println("Rice Selected : Price = " + rice + sign);
         quantity();
         totalPrice = quantitiyOfItem*rice;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice);
+        System.out.println("Your Bill is: " + totalPrice + sign);
     }
 }
 class muttonPanel extends mainControlPanel{
     void muttonManager(){
-        System.out.println("mutton Selected : Price = " + mutton + "PKR");
+        System.out.println("mutton Selected : Price = " + mutton + sign);
         quantity();
         totalPrice = quantitiyOfItem*mutton;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice);
+        System.out.println("Your Bill is: " + totalPrice + sign);
     }
 }
 class haleemPanel extends mainControlPanel{
     void haleemManager(){
-        System.out.println("Haleem Selected : Price = " + haleem + "PKR");
+        System.out.println("Haleem Selected : Price = " + haleem + sign);
         quantity();
         totalPrice = quantitiyOfItem*haleem;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice);
+        System.out.println("Your Bill is: " + totalPrice+ sign);
     }
 }
 
