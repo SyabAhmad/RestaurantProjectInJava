@@ -12,6 +12,7 @@ class mainControlPanel{
     int quantitiyOfItem;
     double totalPrice = 0;
     double saleTax = 0;
+    String stringText = "With Taxes";
     Scanner reader = new Scanner(System.in);
     //// to display all items in the manu
     void displayItems(){
@@ -69,7 +70,7 @@ class chickenPolaoPanel extends mainControlPanel{
         totalPrice = quantitiyOfItem*chickenPolao;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + sign);
+        System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
     }
 
 }
@@ -80,7 +81,7 @@ class chickenTikkaPanel extends mainControlPanel{
         totalPrice = quantitiyOfItem*chickenTikka;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + sign);
+        System.out.println("Your Bill is: " + totalPrice +" " + sign + stringText);
     }
 }
 class ricePanel extends mainControlPanel{
@@ -90,7 +91,7 @@ class ricePanel extends mainControlPanel{
         totalPrice = quantitiyOfItem*rice;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + sign);
+        System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
     }
 }
 class muttonPanel extends mainControlPanel{
@@ -100,7 +101,7 @@ class muttonPanel extends mainControlPanel{
         totalPrice = quantitiyOfItem*mutton;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + sign);
+        System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
     }
 }
 class haleemPanel extends mainControlPanel{
@@ -110,7 +111,7 @@ class haleemPanel extends mainControlPanel{
         totalPrice = quantitiyOfItem*haleem;
         saleTaxPanel();
         currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice+ sign);
+        System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
     }
 }
 
