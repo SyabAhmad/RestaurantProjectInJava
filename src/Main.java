@@ -5,6 +5,7 @@ class mainControlPanel{
     double chickenPolao = 1500;
     double rice = 1800;
     double chickenTikka = 2000;
+    double someThingElse;
     double haleem = 700;
     String sign = "PKR";
     byte options;
