@@ -5,7 +5,7 @@ class mainControlPanel{ //// from this mai control panel we will manage our all 
     double mutton = 2500; /// price of mutton
     double chickenPolao = 1500;/// price of Chicken Polao
     double rice = 1800;/// price of Rice
-    double chickenTikka = 2000;/// price of Chicken Tikka
+    double chickenTikka = 2000;/// price of Chicken Tika
     //double someThingElse;
     double haleem = 700;/// price of Haleem
     String sign = "PKR"; /// to print currency sign after Price
