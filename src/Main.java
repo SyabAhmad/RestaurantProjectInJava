@@ -28,17 +28,26 @@ class mainControlPanel{
         quantitiyOfItem = reader.nextInt();
 
     }
-    void saleTaxPanel(){
+    void saleTaxPanel( double priceForTax){
 
-        if (totalPrice <= 1000){
-            totalPrice = totalPrice+0;
-        } else if (totalPrice > 1000 && totalPrice <= 3000) {
-            saleTax = (totalPrice/100) * 2;
+        if (priceForTax <= 1000){
+            priceForTax = priceForTax+0;
+            totalPrice +=priceForTax;
+            System.out.println(totalPrice);
+        } else if (priceForTax > 1000 && priceForTax <= 3000) {
+            saleTax = (priceForTax/100) * 2;
+            totalPrice = quantitiyOfItem*priceForTax;
             totalPrice = totalPrice + saleTax; ////2%
-        } else if (totalPrice > 3000) {
-            saleTax = (totalPrice/100) * 5;
+            //totalPrice +=priceForTax;
+            System.out.println(totalPrice);
+        } else if (priceForTax > 3000) {
+            saleTax = (priceForTax/100) * 5;
+            totalPrice = quantitiyOfItem*priceForTax;
             totalPrice = totalPrice + saleTax; ////5%
+            //totalPrice +=priceForTax;
+            System.out.println(totalPrice);
         }
+
     }
 
     void currencyChooser(){
@@ -69,7 +78,7 @@ class chickenPolaoPanel extends mainControlPanel{
         System.out.println("Chicken Polao Selected : Price = " + chickenPolao + sign);
         quantity();
         totalPrice = quantitiyOfItem*chickenPolao;
-        saleTaxPanel();
+        saleTaxPanel(chickenPolao);
         currencyChooser();
         System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
     }
@@ -80,7 +89,7 @@ class chickenTikkaPanel extends mainControlPanel{
         System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + sign);
         quantity();
         totalPrice = quantitiyOfItem*chickenTikka;
-        saleTaxPanel();
+        saleTaxPanel(chickenTikka);
         currencyChooser();
         System.out.println("Your Bill is: " + totalPrice +" " + sign + stringText);
     }
@@ -90,7 +99,7 @@ class ricePanel extends mainControlPanel{
         System.out.println("Rice Selected : Price = " + rice + sign);
         quantity();
         totalPrice = quantitiyOfItem*rice;
-        saleTaxPanel();
+        saleTaxPanel(rice);
         currencyChooser();
         System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
     }
@@ -100,7 +109,7 @@ class muttonPanel extends mainControlPanel{
         System.out.println("mutton Selected : Price = " + mutton + sign);
         quantity();
         totalPrice = quantitiyOfItem*mutton;
-        saleTaxPanel();
+        saleTaxPanel(mutton);
         currencyChooser();
         System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
     }
@@ -110,7 +119,7 @@ class haleemPanel extends mainControlPanel{
         System.out.println("Haleem Selected : Price = " + haleem + sign);
         quantity();
         totalPrice = quantitiyOfItem*haleem;
-        saleTaxPanel();
+        saleTaxPanel(haleem);
         currencyChooser();
         System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
     }
