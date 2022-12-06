@@ -1,21 +1,23 @@
-import java.util.Scanner;
+import java.util.Scanner;  //// For taking Inputs from user
 
-class mainControlPanel{
-    double mutton = 2500;
-    double chickenPolao = 1500;
-    double rice = 1800;
-    double chickenTikka = 2000;
+class mainControlPanel{ //// from this mai control panel we will manage our all program
+
+    double mutton = 2500; /// price of mutton
+    double chickenPolao = 1500;/// price of Chicken Polao
+    double rice = 1800;/// price of Rice
+    double chickenTikka = 2000;/// price of Chicken Tikka
     //double someThingElse;
-    double haleem = 700;
-    String sign = "PKR";
+    double haleem = 700;/// price of Haleem
+    String sign = "PKR"; /// to print currency sign after Price
     byte options;
     byte optionsForCurrency;
-    int quantitiyOfItem;
-    double totalPrice = 0;
-    double saleTax = 0;
-    String stringText = "With Taxes";
-    Scanner reader = new Scanner(System.in);
-    //// to display all items in the manu
+    int quantitiyOfItem; /// used for quantity of items entered by user
+    double totalPrice = 0; /// total price we initialize it with 0
+    double saleTax = 0; //// also tax sale is initialize with zero 0
+    String stringText = "With Taxes"; //// is string to print in bill Section
+    Scanner reader = new Scanner(System.in); // reader is object through which we can
+                                        /// access the Scanner package and all its Functions
+    //// is a function used for to display all items in the manu
     void displayItems(){
         System.out.println("1: Mutton");
         System.out.println("2: Chicken Polao");
@@ -23,21 +25,24 @@ class mainControlPanel{
         System.out.println("4: Chicken Tikka");
         System.out.println("5: Haleem");
     }
+    //// this function is used for entering Quantity of items
+    ///and will be called after displayItem() Function
     void quantity(){
         System.out.println("How Much Do you want it Sir? ");
         quantitiyOfItem = reader.nextInt();
 
     }
+    ///in this method i just added tax to every price and then will add to the total price
     void saleTaxPanel( double priceForTax){
 
-        if (priceForTax <= 1000){
-            priceForTax = priceForTax+0;
+        if (priceForTax <= 1000){ // if price of item is less than 1000
+            priceForTax = priceForTax+0; /// then there will be no tax
             totalPrice +=priceForTax;
-            System.out.println(totalPrice);
-        } else if (priceForTax > 1000 && priceForTax <= 3000) {
-            saleTax = (priceForTax/100) * 2;
-            totalPrice = quantitiyOfItem*priceForTax;
-            totalPrice = totalPrice + saleTax; ////2%
+            System.out.println(totalPrice); /// to display Total Price
+        } else if (priceForTax > 1000 && priceForTax <= 3000) { // if price is >1000 and <3000
+            saleTax = (priceForTax/100) * 2; /// it will add 2% to the original Price and then will add to the total price
+            totalPrice = quantitiyOfItem*priceForTax; //// as above
+            totalPrice = totalPrice + saleTax; ////2% ////as above
             //totalPrice +=priceForTax;
             System.out.println(totalPrice);
         } else if (priceForTax > 3000) {
@@ -47,7 +52,6 @@ class mainControlPanel{
             //totalPrice +=priceForTax;
             System.out.println(totalPrice);
         }
-
     }
 
     void currencyChooser(){
