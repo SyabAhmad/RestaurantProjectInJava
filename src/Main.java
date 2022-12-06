@@ -2,7 +2,7 @@ import java.util.Scanner;  //// For taking Inputs from user
 
 class mainControlPanel{ //// from this mai control panel we will manage our all program
 
-    double mutton = 2500; /// price of mutton
+    double mutton = 2500; /// price of mutto
     double chickenPolao = 1500;/// price of Chicken Polao
     double rice = 1800;/// price of Rice
     double chickenTikka = 2000;/// price of Chicken Tika
