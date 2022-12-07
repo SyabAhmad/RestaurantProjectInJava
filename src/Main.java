@@ -19,11 +19,11 @@ class mainControlPanel{ //// from this mai control panel we will manage our all 
                                         /// access the Scanner package and all its Functions
     //// is a function used for to display all items in the manu
     void displayItems(){
-        System.out.println("1: Mutton");
-        System.out.println("2: Chicken Polao");
-        System.out.println("3: Rice");
-        System.out.println("4: Chicken Tikka");
-        System.out.println("5: Haleem");
+        System.out.println("1: Mutton");///to display menu items
+        System.out.println("2: Chicken Polao");///to display menu items
+        System.out.println("3: Rice");///to display menu items
+        System.out.println("4: Chicken Tikka");///to display menu items
+        System.out.println("5: Haleem");///to display menu items
     }
     //// this function is used for entering Quantity of items
     ///and will be called after displayItem() Function
