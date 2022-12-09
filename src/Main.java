@@ -44,34 +44,34 @@ class mainControlPanel{ //// from this mai control panel we will manage our all 
             totalPrice = quantitiyOfItem*priceForTax; //// as above
             totalPrice = totalPrice + saleTax; ////2% ////as above
             //totalPrice +=priceForTax;
-            System.out.println(totalPrice);
-        } else if (priceForTax > 3000) {
-            saleTax = (priceForTax/100) * 5;
-            totalPrice = quantitiyOfItem*priceForTax;
+            System.out.println(totalPrice); /// it will show total Bill to the Customer
+        } else if (priceForTax > 3000) { /// this block of code will run if the condition if true and price is greater then 3000
+            saleTax = (priceForTax/100) * 5;//// calculation for tax of 5%
+            totalPrice = quantitiyOfItem*priceForTax;///as above
             totalPrice = totalPrice + saleTax; ////5%
             //totalPrice +=priceForTax;
-            System.out.println(totalPrice);
+            System.out.println(totalPrice);/// it will show total Bill to the Customer
         }
     }
 
-    void currencyChooser(){
-        System.out.println("Enter You Desire Currency: ");
-        System.out.println("1: PKR");
-        System.out.println("2: Euro");
-        System.out.println("3: Dolor");
-        optionsForCurrency = reader.nextByte();
-        switch (optionsForCurrency){
-            case 1:
-                totalPrice = totalPrice*1;
-                sign = "PKR";
+    void currencyChooser(){ //// this Function will ask the customer about there currency, the will pay
+        System.out.println("Enter You Desire Currency: ");//// taking input from user
+        System.out.println("1: PKR"); //// displaying currency value
+        System.out.println("2: Euro");//// displaying currency value
+        System.out.println("3: Dolor");//// displaying currency value
+        optionsForCurrency = reader.nextByte();//// taking input of Currency in BYTE data type
+        switch (optionsForCurrency){ //// switch case is used here for 3 type of Currency
+            case 1://// if the customer want to pay in PKR
+                totalPrice = totalPrice*1; /// it will just multiply with 1 (due to 1 it will not change)
+                sign = "PKR"; ///sign of Currency
                 break;
-            case 2:
-                totalPrice = totalPrice/280;
-                sign = "Euro";
+            case 2: //// if the customer want to pay in Euro
+                totalPrice = totalPrice/280; //// it will multiply the total Price with 280 (Changes every Day)
+                sign = "Euro";///// sign of Currency
                 break;
-            case 3:
-                totalPrice = totalPrice/230;
-                sign = "Dolor";
+            case 3: //// if the customer want to pay in dollor
+                totalPrice = totalPrice/230; //// it will multiplay the totak price with 230 (changes every day)
+                sign = "Dolor";/// sign of currency
                 break;
         }
     }
