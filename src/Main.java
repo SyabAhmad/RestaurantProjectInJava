@@ -8,7 +8,7 @@ class mainControlPanel{ //// from this mai control panel we will manage our all 
     double chickenTikka = 2000;/// price of Chicken Tika
     //double someThingElse;
     double haleem = 700;/// price of Haleem
-    String sign = "PKR"; /// to print currency sign after Price
+    String currencySign = "PKR"; /// to print currency sign after Price
     byte options;
     byte optionsForCurrency;
     int quantitiyOfItem; /// used for quantity of items entered by user
@@ -63,99 +63,99 @@ class mainControlPanel{ //// from this mai control panel we will manage our all 
         switch (optionsForCurrency){ //// switch case is used here for 3 type of Currency
             case 1://// if the customer want to pay in PKR
                 totalPrice = totalPrice*1; /// it will just multiply with 1 (due to 1 it will not change)
-                sign = "PKR"; ///sign of Currency
+                currencySign = "PKR"; ///currencySign of Currency
                 break;
             case 2: //// if the customer want to pay in Euro
                 totalPrice = totalPrice/280; //// it will multiply the total Price with 280 (Changes every Day)
-                sign = "Euro";///// sign of Currency
+                currencySign = "Euro";///// currencySign of Currency
                 break;
             case 3: //// if the customer want to pay in dollor
                 totalPrice = totalPrice/230; //// it will multiplay the totak price with 230 (changes every day)
-                sign = "Dolor";/// sign of currency
+                currencySign = "Dolor";/// currencySign of currency
                 break;
         }
     }
 }
 
-class chickenPolaoPanel extends mainControlPanel{
+class chickenPolaoPanel extends mainControlPanel{ //// chicken Polao Panel, we will manage it here
     void chickenPolaoManager(){
-        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + sign);
-        quantity();
-        totalPrice = quantitiyOfItem*chickenPolao;
-        saleTaxPanel(chickenPolao);
-        currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
+        System.out.println("Chicken Polao Selected : Price = " + chickenPolao + currencySign);/// selection confirmation message
+        quantity(); /// we have call the quantity function here, there the function will take input for Quantity
+        totalPrice = quantitiyOfItem*chickenPolao; /// calculation for Total Price
+        saleTaxPanel(chickenPolao);///// adding tax to the total Price
+        currencyChooser();///// here w`ll Chose currency
+        System.out.println("Your Bill is: " + totalPrice +" "+ currencySign + stringText);/// Final Bill
     }
 
 }
-class chickenTikkaPanel extends mainControlPanel{
+class chickenTikkaPanel extends mainControlPanel{ //// chicken Tikka Panel, we will manage it here
     void chickenTikkaManager(){
-        System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + sign);
-        quantity();
-        totalPrice = quantitiyOfItem*chickenTikka;
-        saleTaxPanel(chickenTikka);
-        currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice +" " + sign + stringText);
+        System.out.println("Chicken Tikka Selected : Price = " + chickenTikka + currencySign);/// selection confirmation message
+        quantity(); /// we have call the quantity function here, there the function will take input for Quantity
+        totalPrice = quantitiyOfItem*chickenTikka;/// calculation for Total Price
+        saleTaxPanel(chickenTikka);///// adding tax to the total Price
+        currencyChooser();///// here w`ll Chose currency
+        System.out.println("Your Bill is: " + totalPrice +" " + currencySign + stringText);/// Final Bill
     }
 }
-class ricePanel extends mainControlPanel{
+class ricePanel extends mainControlPanel{ //// Rice Panel, we will manage it here
     void riceManager(){
-        System.out.println("Rice Selected : Price = " + rice + sign);
-        quantity();
-        totalPrice = quantitiyOfItem*rice;
-        saleTaxPanel(rice);
-        currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice +" "+ sign + stringText);
+        System.out.println("Rice Selected : Price = " + rice + currencySign);/// selection confirmation message
+        quantity(); /// we have call the quantity function here, there the function will take input for Quantity
+        totalPrice = quantitiyOfItem*rice;/// calculation for Total Price
+        saleTaxPanel(rice);///// adding tax to the total Price
+        currencyChooser();///// here w`ll Chose currency
+        System.out.println("Your Bill is: " + totalPrice +" "+ currencySign + stringText);/// Final Bill
     }
 }
-class muttonPanel extends mainControlPanel{
+class muttonPanel extends mainControlPanel{ //// Mutton Panel, we will manage it here
     void muttonManager(){
-        System.out.println("mutton Selected : Price = " + mutton + sign);
-        quantity();
-        totalPrice = quantitiyOfItem*mutton;
-        saleTaxPanel(mutton);
-        currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
+        System.out.println("mutton Selected : Price = " + mutton + currencySign);/// selection confirmation message
+        quantity(); /// we have call the quantity function here, there the function will take input for Quantity
+        totalPrice = quantitiyOfItem*mutton;/// calculation for Total Price
+        saleTaxPanel(mutton);///// adding tax to the total Price
+        currencyChooser();///// here w`ll Chose currency
+        System.out.println("Your Bill is: " + totalPrice + " " + currencySign + stringText);/// Final Bill
     }
 }
-class haleemPanel extends mainControlPanel{
+class haleemPanel extends mainControlPanel{ //// Haleem Panel, we will manage it here
     void haleemManager(){
-        System.out.println("Haleem Selected : Price = " + haleem + sign);
-        quantity();
-        totalPrice = quantitiyOfItem*haleem;
-        saleTaxPanel(haleem);
-        currencyChooser();
-        System.out.println("Your Bill is: " + totalPrice + " " + sign + stringText);
+        System.out.println("Haleem Selected : Price = " + haleem + currencySign);/// selection confirmation message
+        quantity(); /// we have call the quantity function here, there the function will take input for Quantity
+        totalPrice = quantitiyOfItem*haleem;/// calculation for Total Price
+        saleTaxPanel(haleem);///// adding tax to the total Price
+        currencyChooser();///// here w`ll Chose currency
+        System.out.println("Your Bill is: " + totalPrice + " " + currencySign + stringText);/// Final Bill
     }
 }
 
-class controlPanel extends mainControlPanel{
-    void controlPanelManager(){
-        displayItems();
-        System.out.println("How can i help you with Sir? : ");
-        options = reader.nextByte();
-        chickenPolaoPanel chickenPanel = new chickenPolaoPanel();
-        muttonPanel mutton = new muttonPanel();
-        ricePanel rice = new ricePanel();
-        chickenTikkaPanel chicken = new chickenTikkaPanel();
-        haleemPanel haleem = new haleemPanel();
-        switch (options){
-            case 1:
+class controlPanel extends mainControlPanel{ /// main COntrol Panel we will Access and Manage all classes and functions From here
+    void controlPanelManager(){ ///  main methods (Not Main)
+        displayItems(); /// calling Display Items Function to display Manu
+        System.out.println("How can i help you with Sir? : ");/// Taking input for Dishes
+        options = reader.nextByte(); //// in BYTE Data Type (variables name is options)
+        chickenPolaoPanel chickenPanel = new chickenPolaoPanel();/// objects is created for accessing other classes Functions
+        muttonPanel mutton = new muttonPanel();/// objects is created for accessing other classes Functions
+        ricePanel rice = new ricePanel();/// objects is created for accessing other classes Functions
+        chickenTikkaPanel chicken = new chickenTikkaPanel();/// objects is created for accessing other classes Functions
+        haleemPanel haleem = new haleemPanel();/// objects is created for accessing other classes Functions
+        switch (options){ /// Switch is for cases
+            case 1:/// if mutton Manager
                 mutton.muttonManager();
                 break;
-            case 2:
+            case 2:/// if Chicken Polao Manager
                 chickenPanel.chickenPolaoManager();
                 break;
-            case 3:
+            case 3:/// if Rice Manager
                 rice.riceManager();
                 break;
-            case 4:
+            case 4:/// if chicken tikka Manager
                  chicken.chickenTikkaManager();
                  break;
-            case 5:
+            case 5:/// if haleem Manager
                   haleem.haleemManager();
                   break;
-            default:
+            default: //// if invalid : like: 7, 45, 8, 6 etc
                    System.out.println("Invalid Arguments");
                    break;
                     }
@@ -163,9 +163,9 @@ class controlPanel extends mainControlPanel{
     }
 }
 
-public class Main {
+public class Main {//// Now this is the main Class and Main Method for calling all the above functions.
     public static void main(String[] args) {
-        controlPanel controlManager = new controlPanel();
-        controlManager.controlPanelManager();
+        controlPanel controlManager = new controlPanel(); /// we just created one object for control Panel class
+        controlManager.controlPanelManager();////  and we have just call the main Control panel method from the above Class.
     }
 }
